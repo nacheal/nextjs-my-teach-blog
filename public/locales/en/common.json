@@ -1,0 +1,15 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "categories": "Categories"
+  },
+  "footer": {
+    "copyright": "© {year} Tech Blog. All rights reserved."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}
