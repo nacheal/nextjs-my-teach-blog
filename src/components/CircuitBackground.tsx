@@ -7,7 +7,8 @@ export default function CircuitBackground() {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!mountRef.current) return;
+    const mount = mountRef.current;
+    if (!mount) return;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -19,7 +20,7 @@ export default function CircuitBackground() {
     );
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    mountRef.current.appendChild(renderer.domElement);
+    mount.appendChild(renderer.domElement);
 
     // Circuit lines
     const material = new THREE.LineBasicMaterial({ 
@@ -65,7 +66,7 @@ export default function CircuitBackground() {
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      mountRef.current?.removeChild(renderer.domElement);
+      mount?.removeChild(renderer.domElement);
     };
   }, []);
 
